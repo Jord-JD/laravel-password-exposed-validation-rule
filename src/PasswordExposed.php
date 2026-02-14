@@ -1,10 +1,10 @@
 <?php
 
-namespace DivineOmega\LaravelPasswordExposedValidationRule;
+namespace JordJD\LaravelPasswordExposedValidationRule;
 
-use DivineOmega\LaravelPasswordExposedValidationRule\Factories\PasswordExposedCheckerFactory;
-use DivineOmega\PasswordExposed\Enums\PasswordStatus;
-use DivineOmega\PasswordExposed\PasswordExposedChecker;
+use JordJD\LaravelPasswordExposedValidationRule\Factories\PasswordExposedCheckerFactory;
+use JordJD\PasswordExposed\Enums\PasswordStatus;
+use JordJD\PasswordExposed\PasswordExposedChecker;
 use Illuminate\Contracts\Validation\Rule;
 
 /**
@@ -66,7 +66,7 @@ class PasswordExposed implements Rule
      *
      * @param string $customMessage
      *
-     * @return \DivineOmega\LaravelPasswordExposedValidationRule\PasswordExposed
+     * @return \JordJD\LaravelPasswordExposedValidationRule\PasswordExposed
      */
     public function setMessage($message)
     {

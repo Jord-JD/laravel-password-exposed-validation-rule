@@ -1,9 +1,9 @@
 <?php
 
-namespace DivineOmega\LaravelPasswordExposedValidationRule\Factories;
+namespace JordJD\LaravelPasswordExposedValidationRule\Factories;
 
-use DivineOmega\DOFileCachePSR6\CacheItemPool;
-use DivineOmega\PasswordExposed\PasswordExposedChecker;
+use JordJD\DOFileCachePSR6\CacheItemPool;
+use JordJD\PasswordExposed\PasswordExposedChecker;
 
 /**
  * Class PasswordExposedCheckerFactory.

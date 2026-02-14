@@ -28,7 +28,7 @@ Please note that this package requires Laravel 5.1 or above.
 The following code snippet shows an example of how to use the password exposed validation rule.
 
 ```php
-use DivineOmega\LaravelPasswordExposedValidationRule\PasswordExposed;
+use JordJD\LaravelPasswordExposedValidationRule\PasswordExposed;
 
 $request->validate([
     'password' => ['required', new PasswordExposed()],
@@ -38,7 +38,7 @@ $request->validate([
 If you wish, you can also set a custom validation message, as shown below.
 
 ```php
-use DivineOmega\LaravelPasswordExposedValidationRule\PasswordExposed;
+use JordJD\LaravelPasswordExposedValidationRule\PasswordExposed;
 
 $request->validate([
     'password' => ['required', (new PasswordExposed())->setMessage('This password is not secure.')],
