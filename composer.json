@@ -1,31 +1,39 @@
 {
-    "name": "divineomega/laravel-password-exposed-validation-rule",
-    "description": "Laravel validation rule that checks if a password has been exposed in a data breach",
-    "type": "library",
-    "require": {
-        "php": "^7.1||^8.0||8.1",
-        "divineomega/password_exposed": "^3.2.0",
-        "illuminate/contracts": "^5.1||^6.0||^7.0||^8.0||^9.0"
-    },
-    "license": "LGPL-3.0-only",
-    "authors": [
-        {
-            "name": "Jordan Hall",
-            "email": "jordan@hall05.co.uk"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "DivineOmega\\LaravelPasswordExposedValidationRule\\": "./src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^7.0||^8.0||^9.0",
-        "php-coveralls/php-coveralls": "^2.0"
+  "name": "jord-jd/laravel-password-exposed-validation-rule",
+  "description": "Laravel validation rule that checks if a password has been exposed in a data breach",
+  "type": "library",
+  "require": {
+    "php": "^7.1||^8.0||8.1",
+    "divineomega/password_exposed": "^3.2.0",
+    "illuminate/contracts": "^5.1||^6.0||^7.0||^8.0||^9.0"
+  },
+  "license": "LGPL-3.0-only",
+  "authors": [
+    {
+      "name": "Jordan Hall",
+      "email": "jordan@hall05.co.uk"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DivineOmega\\LaravelPasswordExposedValidationRule\\": "./src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0||^8.0||^9.0",
+    "php-coveralls/php-coveralls": "^2.0"
+  },
+  "replace": {
+    "jord-jd/laravel-password-exposed-validation-rule": "self.version"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.0-dev"
+    }
+  }
 }
