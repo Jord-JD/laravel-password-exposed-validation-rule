@@ -29,11 +29,11 @@
     "php-coveralls/php-coveralls": "^2.0"
   },
   "replace": {
-    "jord-jd/laravel-password-exposed-validation-rule": "self.version"
+    "divineomega/laravel-password-exposed-validation-rule": "self.version"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "3.0-dev"
+      "dev-master": "4.0-dev"
     }
   }
 }
