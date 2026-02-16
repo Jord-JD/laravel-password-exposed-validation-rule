@@ -3,9 +3,9 @@
   "description": "Laravel validation rule that checks if a password has been exposed in a data breach",
   "type": "library",
   "require": {
-    "php": "^7.1||^8.0||8.1",
+    "php": "^7.4||^8.0",
     "jord-jd/password_exposed": "^5.0",
-    "illuminate/contracts": "^5.1||^6.0||^7.0||^8.0||^9.0"
+    "illuminate/contracts": "^8.0||^9.0||^10.0||^11.0||^12.0"
   },
   "license": "LGPL-3.0-only",
   "authors": [
@@ -25,15 +25,14 @@
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^7.0||^8.0||^9.0",
-    "php-coveralls/php-coveralls": "^2.0"
+    "phpunit/phpunit": "^9.6"
   },
   "replace": {
     "divineomega/laravel-password-exposed-validation-rule": "self.version"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "5.0-dev"
+      "dev-master": "6.0-dev"
     }
   }
 }

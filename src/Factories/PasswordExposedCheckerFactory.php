@@ -3,6 +3,7 @@
 namespace JordJD\LaravelPasswordExposedValidationRule\Factories;
 
 use JordJD\DOFileCachePSR6\CacheItemPool;
+use JordJD\PasswordExposed\Interfaces\PasswordExposedCheckerInterface;
 use JordJD\PasswordExposed\PasswordExposedChecker;
 
 /**
@@ -13,7 +14,7 @@ class PasswordExposedCheckerFactory
     /**
      * Creates and returns an instance of PasswordExposedChecker.
      *
-     * @return PasswordExposedChecker
+     * @return PasswordExposedCheckerInterface
      */
     public function instance()
     {

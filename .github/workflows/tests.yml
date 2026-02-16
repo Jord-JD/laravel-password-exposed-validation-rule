@@ -1,0 +1,53 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: PHP ${{ matrix.php }} / Laravel ${{ matrix.laravel }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php: "7.4"
+            laravel: "^8.0"
+            dependency_preference: "--prefer-lowest --prefer-stable"
+          - php: "8.0"
+            laravel: "^9.0"
+            dependency_preference: "--prefer-stable"
+          - php: "8.1"
+            laravel: "^10.0"
+            dependency_preference: "--prefer-stable"
+          - php: "8.2"
+            laravel: "^11.0"
+            dependency_preference: "--prefer-stable"
+          - php: "8.3"
+            laravel: "^12.0"
+            dependency_preference: "--prefer-stable"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: composer:v2
+
+      - name: Validate composer.json
+        run: composer validate --strict
+
+      - name: Install dependencies
+        run: composer update --no-interaction --prefer-dist --with-all-dependencies ${{ matrix.dependency_preference }} "illuminate/contracts:${{ matrix.laravel }}"
+
+      - name: Run tests
+        run: ./vendor/bin/phpunit
