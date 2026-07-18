@@ -15,7 +15,7 @@ $request->validate([
 ## Compatibility
 
 - PHP: 7.4+ and 8.x
-- Laravel: 8.x through 12.x
+- Laravel: 8.x through 13.x
 
 ## Installation
 
@@ -69,3 +69,5 @@ PasswordNotExposed::resolvePasswordExposedCheckerUsing(function () use ($fakeChe
     return $fakeChecker;
 });
 ```
+
+Non-string values are left to Laravel's other validation rules, so combine this rule with `string` when the field must contain text. Objects that implement `__toString()` are checked normally.
