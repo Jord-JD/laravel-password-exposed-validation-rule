@@ -60,6 +60,34 @@ class PasswordNotExposedTest extends TestCase
     }
 
     /** @test */
+    public function nonStringValuesAreLeftToOtherValidationRules()
+    {
+        $rule = new PasswordNotExposed(new FakePasswordExposedChecker());
+
+        $this->assertTrue($rule->passes('password', null));
+        $this->assertTrue($rule->passes('password', []));
+        $this->assertTrue($rule->passes('password', new \stdClass()));
+    }
+
+    /** @test */
+    public function stringableValuesAreChecked()
+    {
+        $rule = new PasswordNotExposed(
+            new FakePasswordExposedChecker([
+                'password' => PasswordStatus::EXPOSED,
+            ])
+        );
+        $value = new class {
+            public function __toString()
+            {
+                return 'password';
+            }
+        };
+
+        $this->assertFalse($rule->passes('password', $value));
+    }
+
+    /** @test */
     public function customCheckerResolverCanBeUsedForTesting()
     {
         PasswordNotExposed::resolvePasswordExposedCheckerUsing(

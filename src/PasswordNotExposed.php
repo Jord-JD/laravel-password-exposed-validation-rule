@@ -66,6 +66,10 @@ class PasswordNotExposed implements Rule
      */
     public function passes($attribute, $value)
     {
+        if (!is_string($value) && !(is_object($value) && method_exists($value, '__toString'))) {
+            return true;
+        }
+
         $passwordStatus = $this->passwordExposedChecker->passwordExposed((string) $value);
 
         return $passwordStatus !== PasswordStatus::EXPOSED;
